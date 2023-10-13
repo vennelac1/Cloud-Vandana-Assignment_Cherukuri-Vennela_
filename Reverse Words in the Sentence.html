@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Reverse words in the Sentence</title>
+<script type="text/javascript">
+function reverseWords()
+{
+	sen=document.getElementById("idtxt").value;
+	var words = sen.split(" ");
+    var reversedWords = words.map(function(word) 
+    {
+        return word.split('').reverse().join('');
+    });
+    var reversedSentence = reversedWords.join(" ");
+    document.getElementById("idtxt").value= reversedSentence;
+}
+	
+</script>
+</head>
+<body>
+Enter the sentence:<input type="text" id="idtxt" ><br>
+<input type="submit" id="idbtn" value="Reverse the words" onclick="reverseWords()">
+</body>
+</html>

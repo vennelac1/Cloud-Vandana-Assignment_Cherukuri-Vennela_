@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculator</title>
+<link rel="stylesheet" href="StyleSheet for Calculator.css">
+
+<script type="text/javascript">
+function addExp(ch)
+{
+	document.getElementById("idtxt").value+=ch;
+}
+function evaluateExp()
+{
+	exp=document.getElementById("idtxt").value;
+	res=eval(exp);
+	document.getElementById("idtxt").value=res;
+}
+function allClear()
+{
+	document.getElementById("idtxt").value="";
+}
+</script>
+</head>
+<body>
+<table border="solid" align="center">
+<caption>Calculator</caption>
+<tr>
+	<td colspan=3>
+	<input type="text" id="idtxt" name="textbox">
+	</td>
+	<td>
+	<input type="button" id="idbtnac" name="AllClear" value="AC" onclick="allClear()">
+	</td>
+</tr>
+<tr>
+	<td>
+	<input type="button" id="idbtn9" name="btn9" value="7" class="bgcolor" onclick="addExp(7)">
+	</td>
+	<td>
+	<input type="button" id="idbtn8" name="btn8" value="8" class="bgcolor" onclick="addExp(8)">
+	</td>
+	<td>
+	<input type="button" id="idbtn7" name="btn7" value="9" class="bgcolor" onclick="addExp(9)">
+	</td>
+	<td>
+	<input type="button" id="idbtn+" name="btn+" value="+" class="bgcolorforsymbols" onclick="addExp('+')">
+	</td>
+</tr>
+<tr>
+	<td>
+	<input type="button" id="idbtn4" name="btn4" value="4" class="bgcolor" onclick="addExp(4)">
+	</td>
+	<td>
+	<input type="button" id="idbtn5" name="btn5" value="5" class="bgcolor" onclick="addExp(5)">
+	</td>
+	<td>
+	<input type="button" id="idbtn6" name="btn6" value="6" class="bgcolor" onclick="addExp(6)">
+	</td>
+	<td>
+	<input type="button" id="idbtn-" name="btn-" value="-" class="bgcolorforsymbols" onclick="addExp('-')">
+	</td>
+</tr>
+<tr>
+	<td>
+	<input type="button" id="idbtn1" name="btn1" value="1" class="bgcolor" onclick="addExp(1)">
+	</td>
+	<td>
+	<input type="button" id="idbtn2" name="btn2" value="2" class="bgcolor" onclick="addExp(2)">
+	</td>
+	<td>
+	<input type="button" id="idbtn3" name="btn3" value="3" class="bgcolor" onclick="addExp(3)">
+	</td>
+	<td>
+	<input type="button" id="idbtn/" name="btn/" value="/" class="bgcolorforsymbols" onclick="addExp('/')">
+	</td>
+</tr>
+<tr>
+	<td>
+	<input type="button" id="idbtn." name="btn." value="." class="bgcolor" onclick="addExp('.')">
+	</td>
+	<td>
+	<input type="button" id="idbtn0" name="btn0" value="0" class="bgcolor" onclick="addExp(0)">
+	</td>
+	<td>
+	<input type="button" id="idbtn=" name="btn=" value="=" class="bgcolor" onclick="evaluateExp()">
+	</td>
+	<td>
+	<input type="button" id="idbtn*" name="btn*" value="*" class="bgcolorforsymbols" onclick="addExp('*')">
+	</td>
+</tr>
+</table>
+</body>
+</html>

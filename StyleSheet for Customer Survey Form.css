@@ -1,0 +1,26 @@
+@charset "UTF-8";
+#sbt
+{
+	background-color:#53a9ff;
+	color:white;
+	border-color:white;
+}
+caption
+{
+	color:white;
+	font:bold;
+	font-size: 25px;
+}
+.classsub
+{
+	color:#def0fe;
+	font-size: 10px;
+}
+sup
+{
+	color:red;
+}
+sub
+{
+	font-size: 10px;
+}

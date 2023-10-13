@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function sortElements()
+{
+	elements=document.getElementById("idtxt").value;
+	var numbers = elements.split(" ");
+
+	// Sort in descending order
+	numbers.sort(function(a, b) {
+	    return b - a;
+	});
+
+	document.getElementById("idtxt").value=numbers; // Output: [12, 10, 8, 5, 3]
+
+}
+</script>
+</head>
+<body>
+Enter the Numbers:<input type="text" id="idtxt" name="nums"><br>
+<input type="submit" id="idsbt" value="SORT" onclick="sortElements()"> 
+</body>
+</html>

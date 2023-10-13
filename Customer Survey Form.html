@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Customer Survey Form</title>
+<link rel="stylesheet" href="StyleSheet for Customer Survey Form.css">
+<script type="text/javascript">
+function validateName(name)
+{
+	
+	regname=/^[A-Z][a-z]{2,}([ ][A-Z][a-z]+)*$/
+	return regname.test(name);
+}
+function validateEmail(email)
+{
+	
+	regemail=/^[a-z]+[0-9]*[@][a-z]+[.][a-z]+$/
+	return regemail.test(email);
+}
+function validateMobile(mobile)
+{
+	
+	regmobile=/^([+]91[-])?[6-9]{1}[0-9]{9}$/
+	return regmobile.test(mobile);
+}
+function validationForm()
+{
+	name=document.getElementById("idtxt").value;
+	email=document.getElementById("idemail").value;
+	mobile=document.getElementById("idmobile").value;
+	if(!validateName(name))
+	{
+		alert("Enter a valid name");
+		return false;
+	}
+	if(!validateEmail(email))
+	{
+		alert("Enter a valid email");
+		return false;
+	}
+	if(!validateMobile(mobile))
+	{
+		alert("Enter a valid mobile");
+		return false;
+	}
+	
+	alert("Successfully Submitted")
+}
+function clearForm()
+{
+	document.getElementById("idname").value="";
+	document.getElementById("idemail").value="";
+	document.getElementById("idmobile").value="";
+	document.getElementById("idmale").checked=false;
+	document.getElementById("idfemale").checked=false;
+	document.getElementById("idothers").checked=false;
+	document.getElementById("iddob").value="";
+	document.getElementById("idcntry").selectedIndex=0;
+	document.getElementById("idyes1").checked=false;
+	document.getElementById("idno1").checked=false;
+	document.getElementById("idyes2").checked=false;
+	document.getElementById("idno2").checked=false;
+	document.getElementById("idsatisfied").checked=false;
+	document.getElementById("idundecided").checked=false;
+	document.getElementById("idunsatisfied").checked=false;
+	document.getElementById("idtextarea").value="";
+}
+
+</script>
+</head>
+<body style="background-color:#53a9ff">
+<form>
+<table style="background-color:white" align=center>
+<caption>Customer Survey Form</caption>
+<tr>
+	<td><sup>*</sup>Name<br><input type="text" id="idname" name="name" onclick="validation1()" required></td>
+	<td><sup>*</sup>Email<br><input type="email" id="idemail" name="email" required></td>
+</tr>
+<tr>
+	<td><sup>*</sup>Mobile<br><input type="text" id="idmobile" name="mobile" required></td>
+	<td><sup>*</sup>Gender<br><input type="checkbox" id="idmale" name="dateofbirth">Male
+					<input type="checkbox" id="idfemale" name="dateofbirth">Female
+					<input type="checkbox" id="idothers" name="dateofbirth">Others
+	</td>
+</tr>
+<tr>
+	<td><sup>*</sup>DOB<br><input type="date" id="iddob" name="dob" required></td>
+	
+	<td><sup>*</sup>Country<br><select id="idcntry" name="country" required>
+					<option>--Select--</option>
+					<option>India</option>
+					<option>Australia</option>
+					<option>German</option>
+					<option>Indonesia</option>
+					</select>
+					</td>
+</tr>
+<tr>
+	<td colspan=2><sup>*</sup>Is this first time You are using our products and service?<br>
+	<input type="radio" id="idyes1" name="yesorno1" >Yes
+	<input type="radio" id="idno1" name="yesorno1" >No
+	</td>
+</tr>
+<tr>
+	<td colspan=2><sup>*</sup>Would you suggest to your friends and colleague?<br>
+	<input type="radio" id="idyes2" name="yesorno2" >Yes
+	<input type="radio" id="idno2" name="yesorno2" >No
+	</td>
+</tr>
+<tr>
+	<td colspan=2><sup>*</sup>Would you suggest to your friends and colleague?<br>
+	<input type="radio" id="idsatisfied" name="satisfaction" >satisfied
+	<input type="radio" id="idundecided" name="satisfaction" >Undecided
+	<input type="radio" id="idunsatisfied" name="satisfaction" >Unsatisfied
+	</td>
+</tr>
+<tr>
+	<td colspan=2><sup>*</sup>Do you have suggestion to improve our service?<br>
+	<textarea id="idtextarea" name="textarea"></textarea>
+	</td>
+</tr>
+<tr>
+<td><input type="submit" id="btn1" name="submit" value="SUBMIT" onclick="validationForm()"></td>
+<td><input type="button" id="btn2" name="reset" value="RESET" onclick="clearForm()"></td>
+</tr>
+</table>
+<center><sub class="classsub">©️2018 Customer Survey Form. All Rights Reserved | Design by </sub><sub>W3Layouts</sub></center>
+</form>
+</body>
+</html>
